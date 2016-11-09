@@ -22,10 +22,7 @@ export class App {
     clock;
     
     constructor() {
-       this.clock = Observable.merge(
-            this.click$,
-            Observable.interval(5000)
-        ).map(()=> new Date());
+       this.clock = this.click$.map(()=> new Date());
 
     }
 }
