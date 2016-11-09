@@ -10,12 +10,15 @@ import { Subject } from 'rxjs/Subject'
 import { Store } from '@ngrx/store'
 import { SECOND, HOUR } from './reducers'
 
+// Updated to Angular 2 final @NgModule features
+// For more infor on modules, check out:
+// https://egghead.io/lessons/angular-2-create-application-specific-angular-2-components)
 @Component({
     selector: 'app',
     template: `
         <input #inputNum type="number" value="0">
         <button (click)="click$.next(inputNum.value)">Update</button>
-        <clock [time]="time | async"></clock>
+        <h1>{{clock | async | date:'medium'}}</h1>
         `
 })
 export class App {
@@ -24,13 +27,12 @@ export class App {
 
     seconds$ = Observable
         .interval(1000)
-        .mapTo({type: SECOND, payload: 1})
+        .mapTo({type: SECOND, payload: 3})
 
-    time
+    clock
 
     constructor(store: Store<any>) {
-        this.time = store.select('clock')
-
+        this.clock = store.select('clock')
 
         Observable.merge(
             this.click$,
