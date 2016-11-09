@@ -3,8 +3,6 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/observable/interval'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/observable/merge'
-import 'rxjs/add/operator/startWith'
-import 'rxjs/add/operator/scan'
 import { Subject } from 'rxjs/Subject'
 
 // Updated to Angular 2 final @NgModule features
@@ -26,14 +24,8 @@ export class App {
     constructor() {
        this.clock = Observable.merge(
             this.click$,
-            Observable.interval(1000)
-        )
-            .startWith(new Date())
-            .scan((acc:Date, curr)=> {
-                const date = new Date(acc.getTime());
-                date.setSeconds(date.getSeconds() + 1);
+            Observable.interval(5000)
+        ).map(()=> new Date());
 
-                return date;
-            });
     }
 }
