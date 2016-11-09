@@ -10,7 +10,9 @@ import 'rxjs/add/operator/withLatestFrom'
 import { Subject } from 'rxjs/Subject'
 import { Store } from '@ngrx/store'
 import { SECOND, HOUR, ADVANCE, RECALL } from './reducers'
-
+// Updated to Angular 2 final @NgModule features
+// For more infor on modules, check out:
+// https://egghead.io/lessons/angular-2-create-application-specific-angular-2-components)
 @Component({
     selector: 'app',
     template: `
