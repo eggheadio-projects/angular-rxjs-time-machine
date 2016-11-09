@@ -1,7 +1,7 @@
-# Dispatching Action Types to Reducers
+# Using ngrx/store and Reducers for Angular 2 Application State
 
 ## Summary
-A reducer needs to know what you want it to do whenever it's called. You do this by passing along an action type then the reducer can switch based on the type to achieve the logic you need. This lesson covers dispatching action types to your reducer to update the state based on that type.
+ngrx/store is a library that simplifies common RxJS patterns for managing state and gives you an easy api to use it within your Angular 2 application. This lesson shows how to convert a common startWith and scan stream into an ngrx Store and reducer.
 
 ## Plunker
-This code can be found on [Plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-wikipedia-demo/angular-2-dispatching-action-types-to-reducers?preview=plnkr.html&show=src%2Fapp%2Fapp.component.ts,preview)
+This code can be found on [Plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-wikipedia-demo/angular-2-using-ngrx-store-and-reducers-for-angular-2-application-state?preview=plnkr.html&show=src%2Fapp%2Fapp.component.ts,preview)
