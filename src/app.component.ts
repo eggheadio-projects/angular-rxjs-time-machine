@@ -2,7 +2,6 @@ import { Component } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/observable/interval'
 import 'rxjs/add/operator/map'
-import 'rxjs/add/observable/merge'
 import { Subject } from 'rxjs/Subject'
 
 // Updated to Angular 2 final @NgModule features
@@ -12,17 +11,11 @@ import { Subject } from 'rxjs/Subject'
 @Component({
     selector: 'app',
     template: `
-        <button (click)="click$.next()">Update</button>
         <h1>{{clock | async | date:'medium'}}</h1>
         `
 })
 export class App {
-    click$ = new Subject();
-
-    clock;
-    
-    constructor() {
-       this.clock = this.click$.map(()=> new Date());
-
-    }
+   clock = Observable
+        .interval(1000)
+        .map(()=> new Date());
 }
