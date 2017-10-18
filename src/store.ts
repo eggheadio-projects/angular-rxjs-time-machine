@@ -3,7 +3,7 @@ import { StoreModule } from '@ngrx/store'
 import { clock } from './reducers'
 
 @NgModule({
-    imports: [StoreModule.provideStore({ clock})]
+    imports: [StoreModule.forRoot({ clock})]
 })
 export class AppStoreModule {
 }
