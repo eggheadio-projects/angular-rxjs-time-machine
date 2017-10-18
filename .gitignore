@@ -51,3 +51,6 @@ dev
 # Optional REPL history
 .node_repl_history
 .awcache
+
+
+package-lock.json
