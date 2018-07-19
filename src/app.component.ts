@@ -21,7 +21,7 @@ import { SECOND, HOUR, ADVANCE, RECALL } from './reducers'
         <clock [time]="time | async"></clock>
         
         <div (click)="person$.next(person)" *ngFor="let person of people | async">
-            {{person.name}} is in {{person.time | date:'jms'}}        
+            {{person.name}} is in {{person.time | date:'shortTime'}}        
         </div>
         
         <button (click)="recall$.next()">Recall</button>
